@@ -1,0 +1,19 @@
+image:
+    repository: hello-world
+    tag: v1.2.3
+
+mariadb:
+  replication:
+    enabled: false
+  # prod settings
+  rootUser:
+    password: root
+    forcePassword: true
+  db:
+    name: '1405'
+    user: '1405'
+    password: '1405'
+    forcePassword: true
+    injectSecretsAsVolume: true
+#   tests:
+#     enabled: false

@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2beta3
+kind: Config
+build:
+  local:
+    useBuildkit: true
+  tagPolicy:
+    gitCommit: {}
+  artifacts:
+  - image: hello-world
+deploy:
+    helm:
+      releases:
+      - name: test-1405
+        chartPath: 1405-issue
+        valuesFiles:
+        - values.yaml
+        imageStrategy:
+          helm: {}
+        # artifactOverrides:
+        #   image: hello-world
